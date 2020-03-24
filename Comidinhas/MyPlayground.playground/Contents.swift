@@ -57,3 +57,46 @@ import UIKit
 //}
 //
 //print(soma(valores: totalDeCalorias))
+
+class Refeicao {
+    var nome : String
+    var felicidade : String
+    var itens : [Item] = []
+    
+    init(nome: String, felicidade: String) {
+        self.nome = nome
+        self.felicidade = felicidade
+    }
+    
+    func totalDeCalorias() -> Double {
+        var total = 0.0
+        
+        for item in itens {
+            total += item.calorias
+        }
+        
+        return total
+    }
+}
+
+class Item {
+    var nome: String
+    var calorias: Double
+    
+    init(nome: String, calorias: Double) {
+        self.nome = nome
+        self.calorias = calorias
+    }
+}
+
+var feijao = Item(nome: "Feijão", calorias: 100)
+var arroz = Item(nome: "Arroz", calorias: 300)
+var ovo = Item(nome: "Ovo", calorias: 10)
+
+var almoco = Refeicao(nome: "Almoço", felicidade: "4")
+almoco.itens.append(feijao)
+almoco.itens.append(arroz)
+almoco.itens.append(ovo)
+
+print(almoco.totalDeCalorias())
+
