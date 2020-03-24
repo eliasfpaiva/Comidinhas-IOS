@@ -9,12 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var campoNome: UITextField!
+    @IBOutlet weak var campoFelicidade: UITextField!
+    
+    
+    @IBAction func adicionar(_ sender: Any) {
+        print("Comi \(campoNome.text) e fiquei \(campoFelicidade.text)")
     }
-
-
 }
-
