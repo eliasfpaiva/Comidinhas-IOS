@@ -29,6 +29,6 @@ class Refeicao: NSObject {
     }
     
     func toString() -> String {
-        return "Comi \(nome), consumi \(totalDeCalorias()) kcal e fiquei com felicidade: \(felicidade)"
+        return "\(nome): \(totalDeCalorias()) kcal - felicidade= \(felicidade)"
     }
 }
