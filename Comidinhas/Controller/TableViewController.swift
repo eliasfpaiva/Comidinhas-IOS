@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, AdicionaRefeicaoDelegate {
     var comidas = [
                     Refeicao(nome: "Coxinha", felicidade: 5),
                     Refeicao(nome: "Arroz", felicidade: 5),
@@ -35,7 +35,7 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "adicionar"{
             if let viewController = segue.destination as? ViewController {
-                viewController.tabelaView = self
+                viewController.delegate = self
             }
         }
     }
